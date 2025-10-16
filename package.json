@@ -1,0 +1,29 @@
+{
+  "name": "server-eleventy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "eleventy",
+    "start": "eleventy --serve --watch",
+    "dev": "eleventy --serve --incremental"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tamagosushio/server-eleventy.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Tamagosushio/server-eleventy/issues"
+  },
+  "homepage": "https://github.com/Tamagosushio/server-eleventy#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.2"
+  },
+  "dependencies": {
+    "@11ty/eleventy-img": "^6.0.4"
+  }
+}

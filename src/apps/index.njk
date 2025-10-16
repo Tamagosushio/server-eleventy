@@ -1,0 +1,17 @@
+---
+layout: base.njk
+---
+<main>
+  <p>
+    ベストなSSGを探しに我々はアマゾンの奥地へと向かった。
+  </p>
+</main>
+<nav>
+  <ul>
+    {%- for app in collections.apps %}
+    <li>
+      <a href="{{ app.url }}">{{ app.url }}</a>
+    </li>
+    {%- endfor %}
+  </ul>
+</nav>

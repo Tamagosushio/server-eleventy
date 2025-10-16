@@ -1,0 +1,16 @@
+---
+layout: base.njk
+---
+<main>
+  <p>
+    ベストなSSGを探しに我々はアマゾンの奥地へと向かった。
+  </p>
+</main>
+<nav>
+  <ul>
+    {%- for blog in collections.blogs %}
+    <li>
+      <a href="{{ blog.url }}">{{ blog.data.title }}</a>
+    </li>
+    {%- endfor %}
+</nav>

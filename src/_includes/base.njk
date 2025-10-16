@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title>
+      {%- if title %}
+        {{ title }}
+      {%- else %}
+        {{ metadata.title }}
+      {%- endif %}
+    </title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="
+      {%- if description %}
+        {{ description }}
+      {%- else %}
+        {{ metadata.description }}
+      {%- endif %}"
+    />
+  </head>
+  <body>
+    {{ content | safe }}
+  </body>
+</html>
