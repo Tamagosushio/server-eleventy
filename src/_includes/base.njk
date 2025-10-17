@@ -20,12 +20,15 @@
       {%- endif %}"
     />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/19.1.1/tooltips.min.css">
     <link rel="icon" href="/favicon.ico" sizes="any">
   </head>
   <body>
     {% include "header.njk" %}
     <main class="container">
       {{ content | safe }}
+      {% initClipboardJS %}
     </main>
     <script src="/js/theme-switcher.js"></script>
   </body>
