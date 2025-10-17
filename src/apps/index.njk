@@ -1,17 +1,16 @@
 ---
+title: "アプリ一覧"
 layout: base.njk
 ---
-<main>
-  <p>
-    ベストなSSGを探しに我々はアマゾンの奥地へと向かった。
-  </p>
-</main>
-<nav>
-  <ul>
-    {%- for app in collections.apps %}
-    <li>
-      <a href="{{ app.url }}">{{ app.url | replace('/apps/', '') | replace('/', '') }}</a>
-    </li>
-    {%- endfor %}
-  </ul>
-</nav>
+
+<h1>アプリ一覧</h1>
+<ul>
+  {%- for app in collections.apps %}
+  <li>
+    <a href="{{ app.url }}"><h3>{{ app.data.title or (app.url | replace('/apps/', '') | replace('/', '')) }}</h3></a>
+    {% if app.data.description %}
+      <p>{{ app.data.description }}</p>
+    {% endif %}
+  </li>
+  {%- endfor %}
+</ul>
