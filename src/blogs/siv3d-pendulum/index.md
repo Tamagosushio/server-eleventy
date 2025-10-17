@@ -3,7 +3,7 @@ title: "Siv3Dで振り子のシミュレーション"
 date: 2025-05-29
 description: "Siv3Dで振り子のシミュレーションを作ってみました"
 image:
-  url: "/thumbnails/siv3d-pendulum.png"
+  url: "/blogs/siv3d-pendulum/thumbnail.png"
   alt: "二重振り子"
 tags: ["C++", "OpenSiv3D"]
 ---

@@ -3,7 +3,7 @@ title: "Pythonのイージング関数"
 date: 2025-04-16
 description: "研究で必要になりそうなので作ってみました。"
 image:
-  url: "./thumbnail.png"
+  url: "/blogs/python-easing/thumbnail.png"
   alt: "easeInOutCirc"
 tags: ["Python"]
 ---

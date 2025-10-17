@@ -10,7 +10,7 @@ layout: base.njk
   <ul>
     {%- for app in collections.apps %}
     <li>
-      <a href="{{ app.url }}">{{ app.url }}</a>
+      <a href="{{ app.url }}">{{ app.url | replace('/apps/', '') | replace('/', '') }}</a>
     </li>
     {%- endfor %}
   </ul>

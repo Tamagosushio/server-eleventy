@@ -19,8 +19,14 @@
         {{ metadata.description }}
       {%- endif %}"
     />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+    <link rel="icon" href="/favicon.ico" sizes="any">
   </head>
   <body>
-    {{ content | safe }}
+    {% include "header.njk" %}
+    <main class="container">
+      {{ content | safe }}
+    </main>
+    <script src="/js/theme-switcher.js"></script>
   </body>
 </html>

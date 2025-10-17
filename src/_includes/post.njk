@@ -2,25 +2,11 @@
 layout: base.njk
 ---
 
-<main>
-  <h1>{{ title | capitalize }}</h1>
+<article>
+  <h1>{{ title }}</h1>
+  <p><em>{{ description }}</em></p>
   <time datetime="{{ page.date | dateFormat }}">
     {{ page.date | dateFormat }}
   </time>
   {{ content | safe }}
-</main>
-<nav>
-  <ul>
-    {%- for post in collections.all %}
-    <li>
-      <a href="{{ post.url }}"
-        {% if post.url == page.url %}
-          aria-current="page"
-        {% endif %}
-      >
-        {{ post.data.title }}
-      </a>
-    </li>
-    {%- endfor %}
-  </ul>
-</nav>
+</article>
