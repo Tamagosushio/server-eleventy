@@ -19,7 +19,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets/");
   eleventyConfig.addPassthroughCopy("src/styles/");
   eleventyConfig.addPassthroughCopy("src/js/");
-  eleventyConfig.addPassthroughCopy("favicon.ico");
+  eleventyConfig.addPassthroughCopy("src/favicon.ico");
   // Watch scss folder for changes
   eleventyConfig.addWatchTarget("/src/assets/");
   eleventyConfig.addWatchTarget("/src/styles/");
