@@ -9,9 +9,9 @@
   </div>
   {% if post.data.image.url %}
   <a href="{{ post.url }}">
-    {% if post.data.image.url.startsWith('http') %}
+    {% if post.data.image.url.startsWith("http") %}
     <img src="{{ post.data.image.url }}" alt="{{ post.data.image.alt }}" eleventy:ignore>
-    {% elif post.data.image.url.startsWith('/') %}
+    {% elif post.data.image.url.startsWith("/") %}
     <img src="{{ post.data.image.url }}" alt="{{ post.data.image.alt }}">
     {% else %}
     <img src="{{ post.url | url }}{{ post.data.image.url }}" alt="{{ post.data.image.alt }}">

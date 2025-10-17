@@ -7,7 +7,7 @@ layout: base.njk
 <ul>
   {%- for app in collections.apps %}
   <li>
-    <a href="{{ app.url }}"><h3>{{ app.data.title or (app.url | replace('/apps/', '') | replace('/', '')) }}</h3></a>
+    <a href="{{ app.url }}"><h3>{{ app.data.title or (app.url | replace("/apps/", "") | replace("/", "")) }}</h3></a>
     {% if app.data.description %}
       <p>{{ app.data.description }}</p>
     {% endif %}
