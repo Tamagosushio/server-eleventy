@@ -1,0 +1,213 @@
+:root {
+    --dohna-bg: #1a1a2e;
+    --dohna-bg-dark: #111122;
+    --dohna-pink: #ff00ff;
+    --dohna-cyan: #00ffff;
+    --dohna-yellow: #ffff00;
+    --text-color: #ffffff;
+    --font-display: "Teko", sans-serif;
+    --font-body: "Noto Sans JP", sans-serif;
+}
+
+body {
+    background-color: var(--dohna-bg);
+    color: var(--text-color);
+    font-family: var(--font-body);
+    margin: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: repeating-linear-gradient(0deg, rgba(0,0,0,0.3) 0, rgba(0,0,0,0.3) 1px, transparent 1px, transparent 3px);
+    pointer-events: none;
+    z-index: 1000;
+}
+
+a {
+  color: var(--dohna-yellow);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--dohna-pink);
+}
+
+.page-wrapper {
+    display: grid;
+    grid-template-areas:
+        "header"
+        "main";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    min-height: 100vh;
+    gap: 2rem;
+}
+
+.main-header {
+    grid-area: header;
+    position: relative;
+    padding: 0.5rem 2rem;
+    border: 3px solid var(--dohna-pink);
+    animation: slideInDown 0.8s 0.2s both;
+}
+.main-header::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: var(--dohna-bg-dark);
+    transform: skewX(-30deg);
+    z-index: -1;
+}
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.main-nav .nav-links {
+    display: flex;
+    gap: 2rem;
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.main-nav .nav-links a {
+    color: var(--dohna-pink);
+    text-decoration: none;
+    transition: color 0.2s, text-shadow 0.2s;
+}
+.main-nav .nav-links a:hover, .main-nav a.active {
+    color: var(--dohna-yellow);
+    text-shadow: 0 0 5px var(--dohna-yellow);
+}
+.main-nav .logo {
+    font-family: var(--font-body);
+    font-size: 1.2rem;
+    color: var(--text-color);
+    font-weight: 700;
+}
+.main-nav .logo span {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    margin-right: 8px;
+    background-image: url(/favicon.ico);
+    background-size: contain;
+}
+
+
+.main-content {
+    grid-area: main;
+    position: relative;
+    padding: 2.5rem;
+    border: 3px solid var(--dohna-cyan);
+    animation: slideInRight 0.8s 0.6s both;
+    overflow: hidden; /* はみ出し防止 */
+}
+.main-content::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: var(--dohna-bg-dark);
+    transform: skewX(-5deg);
+    z-index: -1;
+}
+
+.main-content pre {
+    overflow-x: auto;
+    background-color: rgba(0,0,0,0.3);
+    border: 2px solid var(--dohna-pink);
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    color: var(--dohna-yellow);
+}
+
+h1 {
+    font-size: 4rem;
+    margin: 0 0 1.5rem 0;
+    animation: glitch 2s linear infinite;
+    text-align: center;
+}
+h2 {
+    font-size: 2.5rem;
+    color: var(--dohna-pink);
+}
+
+.post-list-item {
+    position: relative;
+    background-color: var(--dohna-bg-dark);
+    border: 2px solid var(--dohna-pink);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+.post-list-item::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: var(--dohna-bg-dark);
+    transform: skewX(-5deg);
+    z-index: -1;
+}
+.post-list-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 15px var(--dohna-pink);
+}
+.post-list-item .post-content {
+    flex: 1;
+    position: relative;
+    z-index: 1;
+}
+.post-list-item h2 a {
+    font-family: var(--font-body);
+    font-size: 1.5rem;
+    color: var(--dohna-cyan);
+    text-shadow: none;
+}
+.post-list-item h2 a:hover {
+    color: var(--dohna-yellow);
+}
+.post-list-item p {
+    color: #ccc;
+    font-size: 0.9rem;
+}
+.post-list-item footer {
+    margin-top: 1rem;
+    color: #888;
+    font-size: 0.8rem;
+}
+.post-list-item img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 2px solid var(--dohna-cyan);
+    position: relative;
+    z-index: 1;
+}
+
+
+/* --- アニメーション定義 --- */
+@keyframes slideInDown { from { transform: translateY(-100%); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+@keyframes slideInLeft { from { transform: translateX(-100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+@keyframes slideInRight { from { transform: translateX(100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+
+@keyframes glitch {
+    2%, 64% { transform: translate(2px, 0) skew(0deg); }
+    4%, 60% { transform: translate(-2px, 0) skew(0deg); }
+    62% { transform: translate(0, 0) skew(5deg); }
+}

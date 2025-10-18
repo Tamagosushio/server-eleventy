@@ -19,17 +19,22 @@
         {{ metadata.description }}
       {%- endif %}"
     />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@700&family=Noto+Sans+JP:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/main.css">
     <link rel="stylesheet" href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/19.1.1/tooltips.min.css">
     <link rel="icon" href="/favicon.ico" sizes="any">
   </head>
   <body>
-    {% include "header.njk" %}
-    <main class="container">
-      {{ content | safe }}
-      {% initClipboardJS %}
-    </main>
-    <script src="/js/theme-switcher.js"></script>
+    <div class="page-wrapper">
+        {% include "header.njk" %}
+
+        <main class="main-content">
+            {{ content | safe }}
+            {% initClipboardJS %}
+        </main>
+    </div>
   </body>
 </html>

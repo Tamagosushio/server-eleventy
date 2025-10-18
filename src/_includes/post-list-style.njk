@@ -1,17 +1,45 @@
 <style>
   .post-list-item {
+    background-color: #2a2a2a;
+    border: 2px solid var(--dona-border, #ffffff);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
     display: flex;
     justify-content: space-between;
     gap: 1.5rem;
-    margin-bottom: 2rem;
+    transition: transform 0.2s ease-in-out;
   }
+
+  .post-list-item:hover {
+      transform: scale(1.02);
+  }
+
   .post-list-item .post-content {
     flex: 1;
   }
+
+  .post-list-item h2 a {
+    color: var(--dona-pink, #ff33a8);
+    text-shadow: none;
+  }
+
+  .post-list-item h2 a:hover {
+    color: var(--dona-yellow, #f2f23a);
+  }
+
+  .post-list-item p {
+      color: #ccc;
+  }
+
+  .post-list-item footer {
+      margin-top: 1rem;
+      color: #888;
+  }
+
   .post-list-item img {
     width: 150px;
     height: 150px;
-    object-fit: contain;
-    border-radius: 5px;
+    object-fit: cover;
+    border: 2px solid var(--dona-border, #ffffff);
   }
 </style>
