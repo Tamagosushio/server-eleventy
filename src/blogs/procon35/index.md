@@ -3,8 +3,8 @@ title: "procon35体験記"
 date: 2024-10-23
 description: "2024年開催の高専プロコンに参加しました。"
 image:
-  url: "https://www.salesio-sp.ac.jp/main/project/img/d2_99.jpg"
-  alt: "高専プロコン"
+  url: "/blogs/procon35/thumbnail.png"
+  alt: "第35回高専プロコン"
 tags: ["OpenSiv3D", "C++", "高専プロコン"]
 ---
 
