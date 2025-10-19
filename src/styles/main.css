@@ -271,6 +271,18 @@ h2 {
     }
 }
 
+h3 {
+    font-size: 1.0rem;
+    color: var(--dohna-pink);
+    line-height: 1.0;
+}
+
+@media (min-width: 768px) {
+    h3 {
+        font-size: 1.5rem;
+    }
+}
+
 .post-list-item {
     position: relative;
     background-color: var(--dohna-bg-dark);
