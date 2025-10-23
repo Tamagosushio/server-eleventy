@@ -19,6 +19,17 @@
         {{ metadata.description }}
       {%- endif %}"
     />
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="{{ metadata.title }}">
+    <meta property="og:url" content="{{ metadata.url }}{{ page.url }}">
+    <meta property="og:title" content="{%- if title %}{{ title }}{%- else %}{{ metadata.title }}{%- endif %}">
+    <meta property="og:description" content="{%- if description %}{{ description }}{%- else %}{{ metadata.description }}{%- endif %}">
+    {%- if image.url %}
+    <meta property="og:image" content="{{ metadata.url }}{{ image.url }}">
+      {%- if image.alt %}
+    <meta property="og:image:alt" content="{{ image.alt }}">
+      {%- endif %}
+    {%- endif %}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Teko:wght@700&family=Noto+Sans+JP:wght@700&display=swap" rel="stylesheet">
