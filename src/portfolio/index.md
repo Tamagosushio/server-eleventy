@@ -1,13 +1,23 @@
 ---
 layout: base.njk
 title: ポートフォリオ
-description: 今まで作った者たちを並べて置いておきます。
+description: 今まで作ったものたちを並べて置いておきます。
 ---
 
 # {{ title }}
 {{ description }}
 
-## 高専プロコン関連
+<div class="toc">
+<h2>目次</h2>
+<ul>
+    <li><a href="#高専プロコン関連">高専プロコン関連</a></li>
+    <li><a href="#過去のインターンシップ関連">過去のインターンシップ関連</a></li>
+    <li><a href="#OpenSiv3D">OpenSiv3D</a></li>
+    <li><a href="#趣味・個人開発">趣味・個人開発</a></li>
+</ul>
+</div>
+
+## <a id="高専プロコン関連"></a>高専プロコン関連
 第33回,第34回,第35回,第36回の競技部門に計4回出場しました。
 ### 第33回（群馬）
 [https://github.com/UScuber/procon33](https://github.com/UScuber/procon33)  
@@ -35,7 +45,7 @@ visualizerと通信機能を主に担当しました。
 数字ごとに色相を分けるのは非常に見にくかったですが、公式visualizerを参考にして色相ではなく距離に応じて彩度をずらすことで見やすくなりました。  
 ![第36回プロコン](./procon36.png)  
 
-## 過去のインターンシップ関連
+## <a id="過去のインターンシップ関連"></a>過去のインターンシップ関連
 ### しりとりWebアプリ
 [https://github.com/Tamagosushio/jigjp-internship-2024](https://github.com/Tamagosushio/jigjp-internship-2024)  
 株式会社jig.jp様のインターンシップに応募した際に作成した選考課題です。  
@@ -48,7 +58,21 @@ DenoとBulmaを使用して、楽にモダンなデザインにしました。
 [こちらのDenoサーバー](https://mugen-hanabi-touch.deno.dev)からプレイすることができます。  
 ![タイピングゲーム](./jigjp-intern-d.png)  
 
-## 趣味・個人開発
+## <a id="OpenSiv3D"></a>OpenSiv3D
+[日本語ドキュメント](https://siv3d.github.io/ja-jp/)  
+GUIゲーム/アプリを簡単に開発できるOSSのC++フレームワークです。  
+### Contribute
+[https://github.com/Siv3D/OpenSiv3D/pull/1320](https://github.com/Siv3D/OpenSiv3D/pull/1320)  
+立てられていた不具合Issueにプルリクエストを出して、ありがたくマージしてもらいました。  
+[そのときのちょっとしたブログ](/blogs/siv3d-contribute)はこちらに。  
+これを機にどんどんContributeしていきたいと思っています。  
+### SushiGUI
+[https://github.com/Tamagosushio/SushiGUI](https://github.com/Tamagosushio/SushiGUI)  
+OpenSiv3D標準のSimpleGUIを、もっとリッチな見た目にしたいなと思ったので作成しました。  
+とにかく設計に苦労した……今はDecoratorパターンを使ってますが、もっと他に良い方法がないか模索中です。  
+![SushiGUI](https://github.com/Tamagosushio/SushiGUI/raw/main/output.gif)  
+
+## <a id="趣味・個人開発"></a>趣味・個人開発
 いろんなことに手を出してます。時系列順ではないのでご注意を。  
 ### コミックマーケット
 2024年の冬コミ(C105)で技術同人誌を出版しました。  
@@ -75,6 +99,5 @@ DenoとBulmaを使用して、楽にモダンなデザインにしました。
 ### PNGバイナリ
 [https://github.com/Tamagosushio/cpp-png-binary](https://github.com/Tamagosushio/cpp-png-binary)  
 PNGの画像ファイルをバイナリから読み込むことで、より高速な処理を目指す試みです。  
-画像や処理によって結果は異なりますが、場合によってはC++のopencvより処理速度を2倍速くなることがありました。  
-
+画像や処理によって結果は異なりますが、場合によってはC++のopencvより処理速度を2倍速くなることがありました。
 

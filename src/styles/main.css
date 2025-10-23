@@ -444,3 +444,60 @@ h3 {
     will-change: transform;
 }
 
+/* TOC Styles */
+.toc {
+    position: relative;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border: 3px solid var(--dohna-cyan);
+    border-radius: var(--border-radius);
+    background-color: var(--dohna-bg-dark);
+    z-index: 1;
+}
+
+.toc::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: var(--dohna-bg-dark);
+    transform: skewX(-5deg);
+    z-index: -1;
+    border-radius: var(--border-radius);
+}
+
+.toc h2 {
+    font-size: 1.8rem;
+    color: var(--dohna-pink);
+    margin-top: 0;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.toc ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.toc li a {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: var(--dohna-cyan);
+    border: 2px solid var(--dohna-cyan);
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    transition: all var(--transition-speed) ease-in-out;
+    font-family: var(--font-body);
+}
+
+.toc li a:hover {
+    color: var(--dohna-bg-dark);
+    background-color: var(--dohna-cyan);
+    box-shadow: 0 0 10px var(--dohna-cyan);
+    transform: translateY(-2px);
+}
+
