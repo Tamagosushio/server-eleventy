@@ -4,6 +4,11 @@ const codeClipboard = require("eleventy-plugin-code-clipboard");
 const markdownIt = require("markdown-it");
 
 module.exports = function(eleventyConfig) {
+  eleventyConfig.addGlobalData("metadata", {
+    title: "Tamagosushi's Homepage",
+    description: "This is Tamagosushi's Homepage.",
+    url: "https://tamagosushi.jp",
+  });
   eleventyConfig.addFilter("dateFormat", function (value) {
     const Year = value.getFullYear();
     const Month = (parseInt(value.getMonth()) + 1).toString().padStart(2, "0");
