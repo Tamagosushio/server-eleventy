@@ -47,5 +47,24 @@
             {% initClipboardJS %}
         </main>
     </div>
+    <script>
+        switchLanguage = document.getElementById("switch-language");
+        isJa = true;
+        if (document.getElementById("ja") && document.getElementById("eo")) {
+            switchLanguage.style.display = "contents";
+        }
+        switchLanguage.addEventListener("click", (event) => {
+            if (isJa) {
+                switchLanguage.innerText = "JA";
+                document.getElementById("ja").style.display = "none";
+                document.getElementById("eo").style.display = "contents";
+            } else {
+                switchLanguage.innerText = "EO";
+                document.getElementById("eo").style.display = "none";
+                document.getElementById("ja").style.display = "contents";
+            }
+            isJa ^= true;
+        });
+    </script>
   </body>
 </html>
