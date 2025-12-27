@@ -80,6 +80,12 @@ OpenSiv3D標準のSimpleGUIを、もっとリッチな見た目にしたいな�
 いただいたお金は全額絵師様に入ります。  
 本のタイトル通り、discord.jsを使用してDiscordBotを作成する入門書です。  
 ![booth](./booth.png)
+### TUIのJSONエディタ
+[https://github.com/Tamagosushio/EZsetting](https://github.com/Tamagosushio/EZsetting)  
+JSONの値をちょいと弄るだけなのに、GUIのエディタを使うのって無駄じゃね？ってことで作りました。  
+キーボード操作だけで全ての操作が完結します。一応マウス操作も可。  
+キーの追加削除改名、値の変更、検索やキー順変更、Undo/Redo機能があります。
+![EZsetting](https://github.com/Tamagosushio/EZsetting/raw/main/ezsetting.gif)
 ### エスペラント語キーボード
 [https://github.com/Tamagosushio/Esperanto-Keyboard](https://github.com/Tamagosushio/Esperanto-Keyboard)  
 最近エスペラント語を勉強しております。  
