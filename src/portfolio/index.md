@@ -14,6 +14,7 @@ description: 今まで作ったものたちを並べて置いておきます。
     <li><a href="#過去のインターンシップ関連">過去のインターンシップ関連</a></li>
     <li><a href="#OpenSiv3D">OpenSiv3D</a></li>
     <li><a href="#趣味・個人開発">趣味・個人開発</a></li>
+    <li><a href="#その他">その他</a></li>
 </ul>
 </div>
 
@@ -106,4 +107,14 @@ JSONの値をちょいと弄るだけなのに、GUIのエディタを使うの�
 [https://github.com/Tamagosushio/cpp-png-binary](https://github.com/Tamagosushio/cpp-png-binary)  
 PNGの画像ファイルをバイナリから読み込むことで、より高速な処理を目指す試みです。  
 画像や処理によって結果は異なりますが、場合によってはC++のopencvより処理速度を2倍速くなることがありました。
+
+## <a id="その他"></a>その他
+上記に該当しないもの。  
+### 環境値測定
+[https://github.com/Tamagosushio/M5StickCPlus2-ENV-BLE](https://github.com/Tamagosushio/M5StickCPlus2-ENV-BLE)  
+高専で作成した環境値測定プログラムです。  
+M5StickCPlus2に接続された環境センサと風速計から、環境値を測定します。  
+測定値はBLEで送信し、Pythonで受信して表示します。  
+![環境値測定](https://github.com/Tamagosushio/M5StickCPlus2-ENV-BLE/raw/main/m5stickcplus2.jpg)
+
 
