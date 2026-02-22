@@ -12,13 +12,14 @@
     --transition-speed: 0.3s;
 }
 
-html, body {
+html,
+body {
     overflow-x: hidden;
 }
 
 body {
     background:
-        repeating-linear-gradient(0deg, rgba(0,0,0,0.3) 0, rgba(0,0,0,0.3) 1px, transparent 1px, transparent 3px),
+        repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.3) 0, rgba(0, 0, 0, 0.3) 1px, transparent 1px, transparent 3px),
         var(--dohna-bg);
     color: var(--text-color);
     font-family: var(--font-body);
@@ -27,11 +28,12 @@ body {
 }
 
 a {
-  color: var(--dohna-yellow);
-  text-decoration: none;
+    color: var(--dohna-yellow);
+    text-decoration: none;
 }
+
 a:hover {
-  color: var(--dohna-pink);
+    color: var(--dohna-pink);
 }
 
 .page-wrapper {
@@ -70,10 +72,14 @@ a:hover {
         padding: 0.5rem 2rem;
     }
 }
+
 .main-header::before {
     content: "";
     position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background-color: var(--dohna-bg-dark);
     transform: skewX(-30deg);
     z-index: -1;
@@ -86,7 +92,7 @@ a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background: repeating-linear-gradient(0deg, rgba(0,0,0,0.3) 0, rgba(0,0,0,0.3) 1px, transparent 1px, transparent 3px);
+    background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.3) 0, rgba(0, 0, 0, 0.3) 1px, transparent 1px, transparent 3px);
     pointer-events: none;
     z-index: 1;
     border-radius: var(--border-radius);
@@ -99,6 +105,7 @@ a:hover {
     flex-wrap: wrap;
     gap: 1rem;
 }
+
 .main-nav .nav-links {
     display: flex;
     gap: 1rem;
@@ -115,21 +122,26 @@ a:hover {
         font-size: 1.8rem;
     }
 }
+
 .main-nav .nav-links a {
     color: var(--dohna-pink);
     text-decoration: none;
     transition: color 0.2s, text-shadow 0.2s;
 }
-.main-nav .nav-links a:hover, .main-nav a.active {
+
+.main-nav .nav-links a:hover,
+.main-nav a.active {
     color: var(--dohna-yellow);
     text-shadow: 0 0 5px var(--dohna-yellow);
 }
+
 .main-nav .logo {
     font-family: var(--font-body);
     font-size: 1.2rem;
     color: var(--text-color);
     font-weight: 700;
 }
+
 .main-nav .logo span {
     display: inline-block;
     width: 24px;
@@ -159,10 +171,14 @@ a:hover {
         padding: 2.5rem;
     }
 }
+
 .main-content::before {
     content: "";
     position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background-color: var(--dohna-bg-dark);
     transform: skewX(-5deg);
     z-index: -1;
@@ -170,7 +186,7 @@ a:hover {
 
 .main-content pre {
     overflow-x: auto;
-    background-color: rgba(0,0,0,0.3);
+    background-color: rgba(0, 0, 0, 0.3);
     border: 2px solid var(--dohna-pink);
     padding: 1rem;
     border-radius: 5px;
@@ -178,6 +194,8 @@ a:hover {
 
 .main-content img {
     max-width: 100%;
+    max-height: 70vh;
+    object-fit: contain;
     height: auto;
     display: block;
     margin: 1rem auto;
@@ -207,7 +225,8 @@ a:hover {
     color: var(--text-color);
 }
 
-.main-content ul, .main-content ol {
+.main-content ul,
+.main-content ol {
     margin: 1rem 0;
     padding-left: 2rem;
     color: var(--text-color);
@@ -229,7 +248,12 @@ a:hover {
     border-radius: var(--border-radius);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: var(--font-display);
     color: var(--dohna-yellow);
 }
@@ -251,7 +275,7 @@ h1::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: repeating-linear-gradient(0deg, rgba(0,0,0,0.3) 0, rgba(0,0,0,0.3) 1px, transparent 1px, transparent 3px);
+    background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.3) 0, rgba(0, 0, 0, 0.3) 1px, transparent 1px, transparent 3px);
     pointer-events: none;
     z-index: 1;
 }
@@ -305,23 +329,30 @@ h3 {
         gap: 1rem;
     }
 }
+
 .post-list-item::before {
     content: "";
     position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background-color: var(--dohna-bg-dark);
     transform: skewX(-5deg);
     z-index: -1;
 }
+
 .post-list-item:hover {
     transform: translateY(-2px) scale(1.01);
     box-shadow: 0 8px 25px rgba(255, 51, 168, 0.3);
 }
+
 .post-list-item .post-content {
     flex: 1;
     position: relative;
     z-index: 1;
 }
+
 .post-list-item h2 a {
     font-family: var(--font-body);
     font-size: 1.8rem;
@@ -329,20 +360,24 @@ h3 {
     color: var(--dohna-cyan);
     text-shadow: none;
 }
+
 .post-list-item h2 a:hover {
     color: var(--dohna-yellow);
 }
+
 .post-list-item p {
     color: var(--text-muted);
     font-size: 0.9rem;
     line-height: 1.5;
 }
+
 .post-list-item footer {
     margin-top: 1rem;
     color: var(--text-muted);
     font-size: 0.8rem;
     opacity: 0.8;
 }
+
 .post-list-item img {
     width: 120px;
     height: 120px;
@@ -425,14 +460,57 @@ h3 {
 }
 
 
-@keyframes slideInDown { from { transform: translateY(-100%); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-@keyframes slideInLeft { from { transform: translateX(-100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
-@keyframes slideInRight { from { transform: translateX(100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+@keyframes slideInDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
 
 @keyframes glitch {
-    2%, 64% { transform: translate(1px, 0) skew(0deg); }
-    4%, 60% { transform: translate(-1px, 0) skew(0deg); }
-    62% { transform: translate(0, 0) skew(2deg); }
+
+    2%,
+    64% {
+        transform: translate(1px, 0) skew(0deg);
+    }
+
+    4%,
+    60% {
+        transform: translate(-1px, 0) skew(0deg);
+    }
+
+    62% {
+        transform: translate(0, 0) skew(2deg);
+    }
 }
 
 * {
@@ -458,7 +536,10 @@ h3 {
 .toc::before {
     content: "";
     position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background-color: var(--dohna-bg-dark);
     transform: skewX(-5deg);
     z-index: -1;
@@ -504,6 +585,7 @@ h3 {
 #ja {
     display: contents;
 }
+
 #eo {
     display: none;
 }
