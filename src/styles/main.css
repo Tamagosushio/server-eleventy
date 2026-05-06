@@ -7,7 +7,7 @@
     --text-color: #ffffff;
     --text-muted: #b8b8b8;
     --font-display: "Teko", sans-serif;
-    --font-body: "Noto Sans JP", sans-serif;
+    --font-body: "Roboto", "Noto Sans JP", sans-serif;
     --border-radius: 8px;
     --transition-speed: 0.3s;
 }
@@ -19,7 +19,7 @@ body {
 
 body {
     background:
-        repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.3) 0, rgba(0, 0, 0, 0.3) 1px, transparent 1px, transparent 3px),
+        repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.1) 0, rgba(0, 0, 0, 0.1) 1px, transparent 1px, transparent 3px),
         var(--dohna-bg);
     color: var(--text-color);
     font-family: var(--font-body);
@@ -164,6 +164,7 @@ a:hover {
     word-wrap: break-word;
     overflow-wrap: break-word;
     align-self: start;
+    text-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
 }
 
 @media (min-width: 768px) {
@@ -246,6 +247,14 @@ a:hover {
     background-color: rgba(255, 51, 168, 0.1);
     padding: 1rem;
     border-radius: var(--border-radius);
+}
+
+:not(pre) > code {
+    background-color: rgba(0, 0, 0, 0.25);
+    color: var(--dohna-cyan);
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+    font-family: Consolas;
 }
 
 h1,
