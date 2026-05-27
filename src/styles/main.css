@@ -7,7 +7,7 @@
     --text-color: #ffffff;
     --text-muted: #b8b8b8;
     --font-display: "Teko", sans-serif;
-    --font-body: "Roboto", "Noto Sans JP", sans-serif;
+    --font-body: "Inter", "Noto Sans JP", sans-serif;
     --border-radius: 8px;
     --transition-speed: 0.3s;
 }
@@ -233,9 +233,21 @@ a:hover {
     color: var(--text-color);
 }
 
+.main-content ul ul,
+.main-content ol ol,
+.main-content ul ol,
+.main-content ol ul {
+    margin-top: 0.25rem;
+    margin-bottom: 0;
+}
+
 .main-content li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.25rem;
     line-height: 1.5;
+}
+
+.main-content li:last-child {
+    margin-bottom: 0;
 }
 
 .main-content blockquote {
@@ -597,4 +609,77 @@ h3 {
 
 #eo {
     display: none;
+}
+
+/* Table Styles */
+.main-content table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    border: 2px solid var(--dohna-cyan);
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.main-content th,
+.main-content td {
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--dohna-pink);
+    color: var(--text-color);
+    text-align: center;
+    word-break: break-word;
+}
+
+.main-content th {
+    background-color: rgba(255, 51, 168, 0.15);
+    color: var(--dohna-yellow);
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+}
+
+.main-content tr:hover td {
+    background-color: rgba(51, 255, 255, 0.1);
+}
+
+/* Table Details/Summary Styles */
+.main-content table details {
+    text-align: left;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    padding: 0.5rem;
+    border: 1px solid rgba(51, 255, 255, 0.2);
+}
+
+.main-content table summary {
+    cursor: pointer;
+    color: var(--dohna-cyan);
+    font-weight: bold;
+    outline: none;
+    user-select: none;
+    transition: color var(--transition-speed);
+}
+
+.main-content table summary:hover {
+    color: var(--dohna-pink);
+}
+
+.main-content table details[open] summary {
+    margin-bottom: 0.5rem;
+    border-bottom: 1px dashed rgba(51, 255, 255, 0.5);
+    padding-bottom: 0.2rem;
+}
+
+.main-content table .details-content {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.main-content table .details-content p {
+    margin-bottom: 0.4rem;
+    color: var(--text-muted);
+}
+
+.main-content table .details-content p:last-child {
+    margin-bottom: 0;
 }

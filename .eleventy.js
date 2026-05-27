@@ -2,6 +2,7 @@ const { eleventyImageTransformPlugin } = require("@11ty/eleventy-img");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const codeClipboard = require("eleventy-plugin-code-clipboard");
 const markdownIt = require("markdown-it");
+const markdownItAnchor = require("markdown-it-anchor");
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addGlobalData("metadata", {
@@ -29,7 +30,11 @@ module.exports = function (eleventyConfig) {
   // Markdown Overrides
   const markdownLibrary = markdownIt({
     html: true,
-  }).use(codeClipboard.markdownItCopyButton);
+  }).use(markdownItAnchor, {
+    permalink: false,
+    tabIndex: false
+  }).use(codeClipboard.markdownItCopyButton)
+    .use(require("markdown-it-attrs"));
   eleventyConfig.setLibrary("md", markdownLibrary);
   // Set directories to pass through to the _site folder
   [
