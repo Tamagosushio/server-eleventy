@@ -14,5 +14,5 @@ eleventyComputed:
 <h1>"{{ tag }}"</h1>
 
 {%- for post in collections[tag] | reverse %}
-  {{ postListItem(post) }}
+  {{ postListItem(post, loop.first) }}
 {%- endfor %}

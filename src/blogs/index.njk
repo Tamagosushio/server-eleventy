@@ -8,6 +8,6 @@ ogType: website
 
 <h1>ブログ一覧</h1>
 {%- for post in collections.blogs | reverse %}
-  {{ postListItem(post) }}
+  {{ postListItem(post, loop.first) }}
 {%- endfor %}
 

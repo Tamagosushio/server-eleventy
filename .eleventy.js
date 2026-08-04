@@ -15,19 +15,18 @@ module.exports = async function (eleventyConfig) {
     const Date = String(value.getDate()).padStart(2, "0");
     return `${Year}-${Month}-${Date}`;
   });
-  // Image transforms are expensive for animated GIFs and remote images.
-  // Keep production builds optimized while serving source images during local development.
-  if (process.env.ELEVENTY_RUN_MODE !== "serve") {
-    const { eleventyImageTransformPlugin } = await import("@11ty/eleventy-img");
-    eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
-      formats: ["auto"],
-      widths: ["auto"],
-      sharpOptions: {
-        animated: true,
-        limitInputPixels: false
-      }
-    });
-  }
+  const { eleventyImageTransformPlugin } = await import("@11ty/eleventy-img");
+  eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
+    formats: ["auto"],
+    widths: ["auto"],
+    transformOnRequest: process.env.ELEVENTY_RUN_MODE === "serve",
+    htmlOptions: {
+      imgAttributes: {
+        loading: "lazy",
+        decoding: "async",
+      },
+    },
+  });
   // Add plugins
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(codeClipboard);
@@ -49,8 +48,10 @@ module.exports = async function (eleventyConfig) {
     "src/apps/programlingvo/parser.js",
     "src/apps/programlingvo/grammar.pegjs",
     "src/apps/procon34-visualizer-web",
-    "src/**/*.{png,jpeg,jpg,gif}",].forEach((path) => eleventyConfig.addPassthroughCopy(path));
-
+    "src/**/*.gif",
+    "src/blogs/**/thumbnail.png",
+    "src/blogs/thumbnails/",
+  ].forEach((path) => eleventyConfig.addPassthroughCopy(path));
   // Watch directories for changes
   [
     "/src/assets/",

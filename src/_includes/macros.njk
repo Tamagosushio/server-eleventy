@@ -1,4 +1,4 @@
-{% macro postListItem(post) %}
+{% macro postListItem(post, eager=false) %}
 <article class="post-list-item">
   <div class="post-content">
     <h2><a href="{{ post.url }}" class="stretched-link">{{ post.data.title }}</a></h2>
@@ -9,11 +9,11 @@
   </div>
   {% if post.data.image.url %}
     {% if post.data.image.url.startsWith("http") %}
-    <img src="{{ post.data.image.url }}" alt="{{ post.data.image.alt }}" eleventy:ignore>
+    <img src="{{ post.data.image.url }}" alt="{{ post.data.image.alt }}" width="300" decoding="async"{% if eager %} loading="eager" fetchpriority="high"{% else %} loading="lazy"{% endif %} eleventy:ignore>
     {% elif post.data.image.url.startsWith("/") %}
-    <img src="{{ post.data.image.url }}" alt="{{ post.data.image.alt }}">
+    <img src="{{ post.data.image.url }}" alt="{{ post.data.image.alt }}" width="300" sizes="(max-width: 767px) 120px, 150px" decoding="async"{% if eager %} loading="eager" fetchpriority="high"{% else %} loading="lazy"{% endif %} eleventy:formats="webp">
     {% else %}
-    <img src="{{ post.url | url }}{{ post.data.image.url }}" alt="{{ post.data.image.alt }}">
+    <img src="{{ post.url | url }}{{ post.data.image.url }}" alt="{{ post.data.image.alt }}" width="300" sizes="(max-width: 767px) 120px, 150px" decoding="async"{% if eager %} loading="eager" fetchpriority="high"{% else %} loading="lazy"{% endif %} eleventy:formats="webp">
     {% endif %}
   {% endif %}
 </article>

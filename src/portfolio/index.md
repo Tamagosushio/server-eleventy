@@ -71,7 +71,7 @@ GUIゲーム/アプリを簡単に開発できるOSSのC++フレームワーク�
 [https://github.com/Tamagosushio/SushiGUI](https://github.com/Tamagosushio/SushiGUI)  
 OpenSiv3D標準のSimpleGUIを、もっとリッチな見た目にしたいなと思ったので作成しました。  
 とにかく設計に苦労した……今はDecoratorパターンを使ってますが、もっと他に良い方法がないか模索中です。  
-![SushiGUI](https://github.com/Tamagosushio/SushiGUI/raw/main/output.gif)  
+![SushiGUI](https://github.com/Tamagosushio/SushiGUI/raw/main/output.gif){eleventy:ignore loading="lazy" decoding="async"}
 
 ## <a id="趣味・個人開発"></a>趣味・個人開発
 いろんなことに手を出してます。時系列順ではないのでご注意を。  
@@ -86,13 +86,13 @@ OpenSiv3D標準のSimpleGUIを、もっとリッチな見た目にしたいな�
 JSONの値をちょいと弄るだけなのに、GUIのエディタを使うのって無駄じゃね？ってことで作りました。  
 キーボード操作だけで全ての操作が完結します。一応マウス操作も可。  
 キーの追加削除改名、値の変更、検索やキー順変更、Undo/Redo機能があります。
-![EZsetting](https://github.com/Tamagosushio/EZsetting/raw/main/ezsetting.gif)
+![EZsetting](https://github.com/Tamagosushio/EZsetting/raw/main/ezsetting.gif){eleventy:ignore loading="lazy" decoding="async"}
 ### エスペラント語キーボード
 [https://github.com/Tamagosushio/Esperanto-Keyboard](https://github.com/Tamagosushio/Esperanto-Keyboard)  
 最近エスペラント語を勉強しております。  
 エスペラント語では字上符付き文字（Ĉ,Ĵなど）を使うのですが、普通のキーボードではそのまま打ち込むことはできないです。  
 なので、キーボードのみで字上符付き文字を打てるようなWindowsアプリを作成しました。  
-![エスペラント語キーボード](https://github.com/Tamagosushio/Esperanto-Keyboard/raw/main/sample.gif)
+![エスペラント語キーボード](https://github.com/Tamagosushio/Esperanto-Keyboard/raw/main/sample.gif){eleventy:ignore loading="lazy" decoding="async"}
 ### ホームページ
 - 現: [https://github.com/Tamagosushio/server-eleventy](https://github.com/Tamagosushio/server-eleventy)
 - 旧: [https://github.com/Tamagosushio/server-react](https://github.com/Tamagosushio/server-react)
@@ -115,6 +115,6 @@ PNGの画像ファイルをバイナリから読み込むことで、より高�
 高専で作成した環境値測定プログラムです。  
 M5StickCPlus2に接続された環境センサと風速計から、環境値を測定します。  
 測定値はBLEで送信し、Pythonで受信して表示します。  
-![環境値測定](https://github.com/Tamagosushio/M5StickCPlus2-ENV-BLE/raw/main/m5stickcplus2.jpg)
+![環境値測定](https://github.com/Tamagosushio/M5StickCPlus2-ENV-BLE/raw/main/m5stickcplus2.jpg){eleventy:ignore loading="lazy" decoding="async"}
 
 

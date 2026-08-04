@@ -484,11 +484,11 @@ bool TuiController::OnEvent(Event event) {
 最後の大きな改善として、キャプチャ表示のトグルボタンを削除し、結果をシンプルにリスト表示するように変更しました。表示スペースに余裕があり、わざわざ表示切り替えをする必要性がなさそうでしたので。  
 また、右側の「Test String」ボックスのタイトルに「現在の番号/全体の個数」を動的に表示させたり、最後の空の入力ボックスからは「Del」ボタンを非表示にして無駄な操作を防がせたりしています。
 
-![UI改善後1](image4.gif)
+![UI改善後1](image4.gif){eleventy:ignore loading="lazy" decoding="async"}
 
 微妙っぽかったのでもう少しだけUIを弄ります。まず、フォーカス中のウィンドウ枠をシアン色で強調。さらに、Test Stringが複数あり表示がはみ出ても良いように、縦スクロールバーを追加しました。色がつくと一気にそれっぽく見えますね。  
 
-![UI改善後2](image5.gif)
+![UI改善後2](image5.gif){eleventy:ignore loading="lazy" decoding="async"}
 
 
 ## クリップボードへのコピー
@@ -770,7 +770,7 @@ MatchResult RetuiApp::Evaluate(const std::string& regex, const std::string& text
 
 完成した様子がこちらです！
 
-![変数展開機能](image7.gif)
+![変数展開機能](image7.gif){eleventy:ignore loading="lazy" decoding="async"}
 
 左下で定義した変数が、左上のメイン入力欄で参照され、展開後のプレビューが即座に反映されています。もちろん右側のテスト文字列へのマッチングもリアルタイムです。  
 
@@ -897,7 +897,7 @@ jobs:
 そしたらばREADMEを整備して、タグ `v.1.0` をつけてプッシュします！
 
 ## 完成！
-![Retui v.1.0](image9.gif)  
+![Retui v.1.0](image9.gif){eleventy:ignore loading="lazy" decoding="async"}
 
 初めてこういった記事を書きました。  
 開発のテンポは少し崩れますが、区切りごとにコードの説明を入れるのは見直しにもなってよいかもしれませんね。  
