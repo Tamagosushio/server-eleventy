@@ -5,6 +5,9 @@ pagination:
   alias: tag
 permalink: /tags/{{ tag }}/
 layout: "base.njk"
+eleventyComputed:
+  title: "タグ「{{ tag }}」の記事"
+  description: "タグ「{{ tag }}」が付いたブログ記事の一覧です。"
 ---
 {% from "macros.njk" import postListItem %}
 
