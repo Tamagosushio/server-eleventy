@@ -1,10 +1,10 @@
-const { eleventyImageTransformPlugin } = require("@11ty/eleventy-img");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const codeClipboard = require("eleventy-plugin-code-clipboard");
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 
-module.exports = function (eleventyConfig) {
+module.exports = async function (eleventyConfig) {
+  const { eleventyImageTransformPlugin } = await import("@11ty/eleventy-img");
   eleventyConfig.addGlobalData("metadata", {
     title: "Tamagosushi's Homepage",
     description: "This is Tamagosushi's Homepage.",
