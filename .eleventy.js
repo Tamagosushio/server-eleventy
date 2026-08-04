@@ -4,7 +4,6 @@ const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 
 module.exports = async function (eleventyConfig) {
-  const { eleventyImageTransformPlugin } = await import("@11ty/eleventy-img");
   eleventyConfig.addGlobalData("metadata", {
     title: "Tamagosushi's Homepage",
     description: "This is Tamagosushi's Homepage.",
@@ -16,14 +15,19 @@ module.exports = async function (eleventyConfig) {
     const Date = String(value.getDate()).padStart(2, "0");
     return `${Year}-${Month}-${Date}`;
   });
-  eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
-    formats: ["auto"],
-    widths: ["auto"],
-    sharpOptions: {
-      animated: true,
-      limitInputPixels: false
-    }
-  });
+  // Image transforms are expensive for animated GIFs and remote images.
+  // Keep production builds optimized while serving source images during local development.
+  if (process.env.ELEVENTY_RUN_MODE !== "serve") {
+    const { eleventyImageTransformPlugin } = await import("@11ty/eleventy-img");
+    eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
+      formats: ["auto"],
+      widths: ["auto"],
+      sharpOptions: {
+        animated: true,
+        limitInputPixels: false
+      }
+    });
+  }
   // Add plugins
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(codeClipboard);
