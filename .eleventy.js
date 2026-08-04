@@ -42,6 +42,8 @@ module.exports = async function (eleventyConfig) {
     "src/styles/",
     "src/js/",
     "src/favicon.ico",
+    "src/apps/programlingvo/parser.js",
+    "src/apps/programlingvo/grammar.pegjs",
     "src/apps/procon34-visualizer-web",
     "src/**/*.{png,jpeg,jpg,gif}",].forEach((path) => eleventyConfig.addPassthroughCopy(path));
 
