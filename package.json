@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "eleventy",
+    "clean": "node scripts/clean.cjs",
+    "build": "npm run clean && eleventy",
+    "check": "node scripts/verify-build.cjs",
+    "build:check": "npm run build && npm run check",
     "start": "eleventy --serve --watch",
     "dev": "eleventy --serve --incremental"
   },
