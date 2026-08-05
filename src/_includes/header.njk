@@ -1,15 +1,18 @@
 <header class="main-header">
+    {% set currentUrl = page.url or "/" %}
     <nav class="main-nav">
         <a class="logo" href="/" aria-label="たまごすしのホームページへ戻る">
             <span style="display: inline-block; width: 24px; height: 24px; vertical-align: middle; margin-right: 8px; background-image: url(/favicon.ico); background-size: contain;"></span>たまごすしのホームページ
         </a>
         <ul class="nav-links">
-            <li><a href="/">Home</a></li>
-            <li><a href="/portfolio">Portfolio</a></li>
-            <li><a href="/blogs/">Blogs</a></li>
-            <li><a href="/apps/">Apps</a></li>
-            <li><a href="/tags/">Tags</a></li>
-            <li><button id="switch-language" type="button" aria-pressed="false" aria-label="Ŝanĝi al Esperanto" hidden>EO</button></li>
+            <li><a href="/"{% if currentUrl == "/" %} class="active" aria-current="page"{% endif %}>Home</a></li>
+            <li><a href="/portfolio"{% if currentUrl.startsWith("/portfolio") %} class="active" aria-current="page"{% endif %}>Portfolio</a></li>
+            <li><a href="/blogs/"{% if currentUrl.startsWith("/blogs/") %} class="active" aria-current="page"{% endif %}>Blogs</a></li>
+            <li><a href="/apps/"{% if currentUrl.startsWith("/apps/") %} class="active" aria-current="page"{% endif %}>Apps</a></li>
+            <li><a href="/tags/"{% if currentUrl.startsWith("/tags/") %} class="active" aria-current="page"{% endif %}>Tags</a></li>
+            {% if currentUrl == "/" %}
+            <li class="language-switch"><button id="switch-language" type="button" aria-pressed="false" aria-label="Ŝanĝi al Esperanto" hidden>EO</button></li>
+            {% endif %}
         </ul>
     </nav>
 </header>
