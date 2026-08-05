@@ -37,7 +37,7 @@ tags: ["エスペラント"]
 | 最大HP | maks vivo | |
 | カード | karto | |
 | 敵 | malamiko | |
-| 山札 | (via) prestako | <details><summary>説明を開く</summary><div class="details-content"><p>毎ターン開始時に、ここから5枚のカードを引く。</p><p>Je la komenco de ĉiu vico, 5 kartoj estas prenataj de ĉi tie.</p></div></details> |
+| 山札 | (via) prenstako | <details><summary>説明を開く</summary><div class="details-content"><p>毎ターン開始時に、ここから5枚のカードを引く。</p><p>Je la komenco de ĉiu vico, 5 kartoj estas prenataj de ĉi tie.</p></div></details> |
 | 捨て札 | (via) forĵetstako | <details><summary>説明を開く</summary><div class="details-content"><p>山札が空になると、捨て札がシャッフルされて新たな山札になる。</p><p>Se via prenstako estas malplena, la forĵetstako estos miksata en la prenstakon.</p></div></details> |
 | 手札 | (via) mano | |
 | 廃棄札 | (via) elĉerpstako | |
