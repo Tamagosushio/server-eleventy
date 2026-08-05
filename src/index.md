@@ -4,7 +4,7 @@ title: たまごすしのホームページ
 description: ホームページ
 ---
 
-<div id="ja">
+<div id="ja" lang="ja">
 
 webの勉強がてらに作ったので、UIやデザインがころころと変わります。  
 今は[Eleventy](https://www.11ty.dev)を試しています。  
@@ -20,7 +20,7 @@ webの勉強がてらに作ったので、UIやデザインがころころと変
 </div>
 
 
-<div id="eo">
+<div id="eo" lang="eo" hidden>
 
 Interfaco kaj desegno ofta ŝanĝiĝas ĉar mi lernas retejo.  
 Mi provas ["Eleventy"](https://www.11ty.dev) nun.  

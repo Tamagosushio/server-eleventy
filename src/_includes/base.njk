@@ -48,23 +48,26 @@
         </main>
     </div>
     <script>
-        switchLanguage = document.getElementById("switch-language");
-        isJa = true;
-        if (document.getElementById("ja") && document.getElementById("eo")) {
-            switchLanguage.style.display = "contents";
+        const switchLanguage = document.getElementById("switch-language");
+        const japaneseContent = document.getElementById("ja");
+        const esperantoContent = document.getElementById("eo");
+
+        if (switchLanguage && japaneseContent && esperantoContent) {
+            let isJapanese = true;
+            switchLanguage.hidden = false;
+            switchLanguage.addEventListener("click", () => {
+                isJapanese = !isJapanese;
+                japaneseContent.hidden = !isJapanese;
+                esperantoContent.hidden = isJapanese;
+                document.documentElement.lang = isJapanese ? "ja" : "eo";
+                switchLanguage.textContent = isJapanese ? "EO" : "JA";
+                switchLanguage.setAttribute("aria-pressed", String(!isJapanese));
+                switchLanguage.setAttribute(
+                    "aria-label",
+                    isJapanese ? "Ŝanĝi al Esperanto" : "日本語に切り替える",
+                );
+            });
         }
-        switchLanguage.addEventListener("click", (event) => {
-            if (isJa) {
-                switchLanguage.innerText = "JA";
-                document.getElementById("ja").style.display = "none";
-                document.getElementById("eo").style.display = "contents";
-            } else {
-                switchLanguage.innerText = "EO";
-                document.getElementById("eo").style.display = "none";
-                document.getElementById("ja").style.display = "contents";
-            }
-            isJa ^= true;
-        });
     </script>
   </body>
 </html>
