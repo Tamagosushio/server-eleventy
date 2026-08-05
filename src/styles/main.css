@@ -265,6 +265,111 @@ summary:focus-visible {
     margin-bottom: 0;
 }
 
+/* Home page */
+.home-latest {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(51, 255, 255, 0.35);
+}
+
+.home-latest-header {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.home-latest-header h2 {
+    margin: 0;
+}
+
+.home-latest-header > a {
+    flex: none;
+    padding-bottom: 0.25rem;
+    border-bottom: 1px solid currentColor;
+    font-weight: 700;
+}
+
+.home-post-list {
+    margin: 0 !important;
+    padding: 0 !important;
+    border-top: 2px solid var(--dohna-cyan);
+    list-style: none;
+}
+
+.home-post-list li {
+    margin: 0;
+    border-bottom: 1px solid rgba(51, 255, 255, 0.35);
+}
+
+.home-post-list a {
+    display: grid;
+    grid-template-columns: 2rem minmax(0, 1fr) auto 1.5rem;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem 0.75rem;
+    color: var(--text-color);
+    transition: background-color var(--transition-speed), padding var(--transition-speed);
+}
+
+.home-post-list a:hover {
+    padding-left: 1.25rem;
+    color: var(--text-color);
+    background: rgba(51, 255, 255, 0.07);
+}
+
+.home-post-index {
+    color: var(--dohna-pink);
+    font: 700 0.8rem var(--font-body);
+}
+
+.home-post-copy {
+    display: grid;
+    gap: 0.25rem;
+}
+
+.home-post-copy strong {
+    color: var(--dohna-cyan);
+    font-size: 1.05rem;
+}
+
+.home-post-copy > span {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.home-post-list time {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+}
+
+.home-post-arrow {
+    color: var(--dohna-yellow);
+    font-size: 1.2rem;
+}
+
+@media (max-width: 600px) {
+    .home-latest-header {
+        align-items: start;
+        flex-direction: column;
+    }
+
+    .home-post-list a {
+        grid-template-columns: 1.5rem minmax(0, 1fr) 1rem;
+        gap: 0.75rem;
+    }
+
+    .home-post-list time {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    .home-post-arrow {
+        grid-column: 3;
+        grid-row: 1 / span 2;
+    }
+}
 .main-content blockquote {
     border-left: 4px solid var(--dohna-pink);
     padding-left: 1rem;

@@ -34,3 +34,27 @@ Mi vandas la fanzino en ["Booth"](https://muho.booth.pm/items/6511207)
 La enhavo estas ke ni faru Discord roboto kun JavaScript.
 
 </div>
+
+<section class="home-latest" aria-labelledby="latest-title">
+<div class="home-latest-header">
+<h2 id="latest-title">最新の記事</h2>
+<a href="/blogs/">記事一覧 →</a>
+</div>
+
+<ol class="home-post-list">
+{% assign recentPosts = collections.blogs | reverse %}
+{% for post in recentPosts limit: 3 %}
+<li>
+<a href="{{ post.url }}">
+<span class="home-post-index">0{{ forloop.index }}</span>
+<span class="home-post-copy">
+<strong>{{ post.data.title }}</strong>
+<span>{{ post.data.description }}</span>
+</span>
+<time datetime="{{ post.date | dateFormat }}">{{ post.date | dateFormat }}</time>
+<span class="home-post-arrow" aria-hidden="true">↗</span>
+</a>
+</li>
+{% endfor %}
+</ol>
+</section>
