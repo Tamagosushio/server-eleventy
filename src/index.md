@@ -1,7 +1,7 @@
 ---
 layout: "base.njk"
 title: たまごすしのホームページ
-description: ホームページ
+description: たまごすしが徒然なるままに更新する個人サイト。
 ---
 
 <div id="ja" lang="ja">

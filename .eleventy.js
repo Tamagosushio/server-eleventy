@@ -5,9 +5,11 @@ const markdownItAnchor = require("markdown-it-anchor");
 
 module.exports = async function (eleventyConfig) {
   eleventyConfig.addGlobalData("metadata", {
-    title: "Tamagosushi's Homepage",
-    description: "This is Tamagosushi's Homepage.",
+    title: "たまごすしのホームページ",
+    description: "たまごすしが徒然なるままに更新する個人サイト。",
     url: "https://tamagosushi.jp",
+    author: "たまごすし",
+    locale: "ja_JP",
   });
   eleventyConfig.addFilter("dateFormat", function (value) {
     const Year = value.getFullYear();
