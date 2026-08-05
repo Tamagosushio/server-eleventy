@@ -50,6 +50,7 @@ module.exports = async function (eleventyConfig) {
     "src/js/",
     "src/favicon.ico",
     "src/apps/programlingvo/parser.js",
+    "src/apps/programlingvo/programlingvo-worker.js",
     "src/apps/programlingvo/grammar.pegjs",
     "src/apps/procon34-visualizer-web",
     "src/**/*.gif",

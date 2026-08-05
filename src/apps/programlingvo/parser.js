@@ -1,101 +1,114 @@
-let parserReady = false;
+"use strict";
+
+const EXECUTION_TIMEOUT_MS = 2000;
+const DEFAULT_READY_MESSAGE = "実行環境の準備ができました。\nコードを入力して実行してください。";
 const runButton = document.getElementById("run-button");
 const outputElement = document.getElementById("output");
 
-// 初期状態のメッセージを設定
-if(outputElement){
-  outputElement.textContent = "Peggyライブラリと文法を読み込んでいます...";
-}
-if(runButton){
-  runButton.classList.add("loading"); // ボタンのテキストをCSSで「準備中...」に
-  runButton.disabled = true;
+let worker;
+let workerReady = false;
+let executionTimer;
+let readyMessage = DEFAULT_READY_MESSAGE;
+
+function setStatus(message) {
+  if (outputElement) {
+    outputElement.textContent = message;
+  }
 }
 
-// Peggyライブラリが利用可能か再確認
-if(typeof peggy === "undefined" || typeof peggy.generate === "undefined"){
-  console.error("Peggyライブラリまたはpeggy.generateが見つかりません");
-  if(outputElement){
-    outputElement.textContent =
-      "エラー: Peggyライブラリが正しく読み込まれていません。\nページを再読み込みしてください。";
+function setRunning(running) {
+  if (!runButton) {
+    return;
   }
-}else{
-  // 文法定義を読み込む
-  fetch("grammar.pegjs")
-    .then((response) => {
-      if(!response.ok){
-        throw new Error(
-          `文法ファイルの読み込みに失敗しました \n(HTTP ${response.status})`,
-        );
-      }
-      if(outputElement){
-        outputElement.textContent =
-          "文法ファイルを読み込みました。\nパーサーを生成しています...";
-      }
-      return response.text();
-    })
-    .then((grammar) => {
-      try{
-        window.parser = peggy.generate(grammar);
-        parserReady = true;
-        if(runButton){
-          runButton.disabled = false;
-          runButton.classList.remove("loading"); // ボタンのテキストをCSSで「実行」に
-        }
-        if(outputElement){
-          outputElement.textContent =
-            "パーサーの準備ができました。\nコードを入力して実行してください。";
-        }
-      }catch(e){
-        console.error("文法の生成に失敗しました:", e);
-        if(outputElement){
-          outputElement.textContent = "文法の生成に失敗しました: " + e.message;
-        }
-      }
-    })
-    .catch((error) => {
-      console.error("初期化中にエラーが発生しました:", error);
-      if(outputElement){
-        outputElement.textContent = "初期化エラー: " + error.message;
-      }
-    });
+  runButton.disabled = running || !workerReady;
+  runButton.classList.toggle("loading", running || !workerReady);
 }
 
-function parseCode(){
-  const input = document.getElementById("input").value;
-  if(!outputElement){
-    console.error("出力用要素が見つかりません。");
+function startWorker(
+  message = "実行環境を準備しています...",
+  messageAfterReady = DEFAULT_READY_MESSAGE,
+) {
+  if (worker) {
+    worker.terminate();
+  }
+
+  workerReady = false;
+  readyMessage = messageAfterReady;
+  setStatus(message);
+  setRunning(false);
+
+  worker = new Worker("programlingvo-worker.js");
+  worker.addEventListener("message", handleWorkerMessage);
+  worker.addEventListener("error", (event) => {
+    clearTimeout(executionTimer);
+    workerReady = false;
+    setRunning(false);
+    setStatus(`実行環境の初期化に失敗しました: ${event.message}`);
+  });
+}
+
+function handleWorkerMessage(event) {
+  const message = event.data;
+
+  if (message.type === "ready") {
+    workerReady = true;
+    setRunning(false);
+    setStatus(readyMessage);
     return;
   }
-  if(!parserReady){
-    outputElement.textContent =
-      "パーサーの初期化中です。\nしばらくお待ちください。";
+
+  if (message.type === "initialization-error") {
+    workerReady = false;
+    setRunning(false);
+    setStatus(`初期化エラー: ${message.message}`);
     return;
   }
-  if(!input.trim()){
-    outputElement.textContent = "コードを入力してください。";
-    return;
-  }
-  try{
-    const logs = [];
-    const originalConsoleLog = console.log;
-    console.log = (...args) => {
-      logs.push(args.join(" "));
-      originalConsoleLog.apply(console, args); // 元のconsole.logも実行
-    };
-    const result = window.parser.parse(input);
-    console.log = originalConsoleLog; // コンソール出力を元に戻す
+
+  clearTimeout(executionTimer);
+  setRunning(false);
+
+  if (message.type === "result") {
     let resultText = "";
-    if (logs.length > 0) {
-      resultText += "実行結果 (コンソール出力):\n" + logs.join("\n") + "\n\n";
+    if (message.logs.length > 0) {
+      resultText += `実行結果 (コンソール出力):\n${message.logs.join("\n")}\n\n`;
     }
-    resultText += "戻り値:\n" +
-      (result === undefined ? "undefined" : JSON.stringify(result, null, 2));
-    outputElement.textContent = resultText;
-  }catch(error){
-    outputElement.textContent = "エラー:\n" + error.message +
-      (error.location
-        ? `\n場所: Line ${error.location.start.line}, Column ${error.location.start.column}`
-        : "");
-    console.error("パースエラー:", error);
+    resultText += `戻り値:\n${message.result}`;
+    setStatus(resultText);
+    return;
+  }
+
+  if (message.type === "execution-error") {
+    const location = message.location
+      ? `\n場所: Line ${message.location.line}, Column ${message.location.column}`
+      : "";
+    setStatus(`エラー:\n${message.message}${location}`);
   }
 }
+
+function parseCode() {
+  const inputElement = document.getElementById("input");
+  const input = inputElement ? inputElement.value : "";
+
+  if (!workerReady) {
+    setStatus("実行環境を準備しています。\nしばらくお待ちください。");
+    return;
+  }
+
+  if (!input.trim()) {
+    setStatus("コードを入力してください。");
+    return;
+  }
+
+  setStatus("実行中...");
+  setRunning(true);
+  worker.postMessage({ type: "execute", code: input });
+
+  executionTimer = setTimeout(() => {
+    startWorker(
+      "実行が2秒を超えたため停止しました。\n実行環境を再準備しています...",
+      "実行が2秒を超えたため停止しました。\n実行環境を再作成しました。コードを修正して再実行してください。",
+    );
+  }, EXECUTION_TIMEOUT_MS);
+}
+
+startWorker();
