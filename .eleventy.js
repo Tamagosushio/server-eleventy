@@ -29,14 +29,18 @@ module.exports = async function (eleventyConfig) {
   });
   // Add plugins
   eleventyConfig.addPlugin(syntaxHighlight);
-  eleventyConfig.addPlugin(codeClipboard);
   // Markdown Overrides
   const markdownLibrary = markdownIt({
     html: true,
   }).use(markdownItAnchor, {
     permalink: false,
     tabIndex: false
-  }).use(codeClipboard.markdownItCopyButton)
+  }).use(codeClipboard.markdownItCopyButton, {
+    iconifyUrl: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0id2hpdGUiIGQ9Ik0xOSAyMUg4YTIgMiAwIDAgMS0yLTJWOGEyIDIgMCAwIDEgMi0yaDExYTIgMiAwIDAgMSAyIDJ2MTFhMiAyIDAgMCAxLTIgMlptMC0xM0g4djExaDExVjhabS01LTRINXYxMUgzVjVhMiAyIDAgMCAxIDItMmg5djFaIi8+PC9zdmc+",
+    buttonStyle: "",
+    additionalButtonClass: "code-copy-button",
+    title: "コードをコピー",
+  })
     .use(require("markdown-it-attrs"));
   eleventyConfig.setLibrary("md", markdownLibrary);
   // Set directories to pass through to the _site folder
@@ -52,6 +56,11 @@ module.exports = async function (eleventyConfig) {
     "src/blogs/**/thumbnail.png",
     "src/blogs/thumbnails/",
   ].forEach((path) => eleventyConfig.addPassthroughCopy(path));
+  eleventyConfig.addPassthroughCopy({
+    "node_modules/prismjs/themes/prism-okaidia.css": "styles/vendor/prism-okaidia.css",
+    "node_modules/peggy/browser/peggy.min.js": "apps/programlingvo/peggy.min.js",
+    "node_modules/bootstrap/dist/css/bootstrap.min.css": "apps/programlingvo/bootstrap.min.css",
+  });
   // Watch directories for changes
   [
     "/src/assets/",

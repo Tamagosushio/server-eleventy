@@ -691,6 +691,35 @@ h3 {
     margin-bottom: 0;
 }
 
+.code-copy-button {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    padding: 0.4rem;
+    border: 1px solid var(--dohna-cyan);
+    border-radius: 4px;
+    background: var(--dohna-bg-dark);
+    cursor: pointer;
+    opacity: 0.85;
+}
+
+.code-copy-button:hover {
+    opacity: 1;
+}
+
+.code-copy-button [data-feedback] {
+    position: absolute;
+    right: 0;
+    bottom: calc(100% + 0.5rem);
+    width: max-content;
+    padding: 0.3rem 0.5rem;
+    border-radius: 4px;
+    background: var(--dohna-cyan);
+    color: var(--dohna-bg-dark);
+    font: 0.8rem var(--font-body);
+    pointer-events: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
