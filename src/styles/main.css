@@ -479,6 +479,31 @@ h3 {
     }
 }
 
+/* Blog article readability */
+.post-article {
+    --post-readable-width: 52rem;
+}
+
+.post-header {
+    max-width: var(--post-readable-width);
+    margin: 0 auto 2.5rem;
+}
+
+.post-header p {
+    margin-bottom: 0.5rem;
+}
+
+.post-header time {
+    color: var(--text-muted);
+}
+
+.main-content .post-body > * {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: var(--post-readable-width);
+    margin-inline: auto;
+}
+
 .post-list-item {
     position: relative;
     background-color: var(--dohna-bg-dark);
