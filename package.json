@@ -1,13 +1,13 @@
 {
   "name": "server-eleventy",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Tamagosushi's personal website built with Eleventy.",
   "scripts": {
     "clean": "node scripts/clean.cjs",
     "build": "npm run clean && eleventy",
     "check": "node scripts/verify-build.cjs",
     "build:check": "npm run build && npm run check",
+    "test": "npm run build:check",
     "start": "eleventy --serve --watch",
     "dev": "eleventy --serve --incremental"
   },
@@ -16,8 +16,8 @@
     "url": "git+https://github.com/Tamagosushio/server-eleventy.git"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Tamagosushi",
+  "license": "MIT",
   "type": "commonjs",
   "engines": {
     "node": ">=22.12.0"
@@ -25,7 +25,7 @@
   "bugs": {
     "url": "https://github.com/Tamagosushio/server-eleventy/issues"
   },
-  "homepage": "https://github.com/Tamagosushio/server-eleventy#readme",
+  "homepage": "https://tamagosushi.jp",
   "devDependencies": {
     "@11ty/eleventy": "^3.1.6",
     "bootstrap": "^5.3.2",
