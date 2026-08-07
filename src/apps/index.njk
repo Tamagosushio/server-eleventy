@@ -4,14 +4,20 @@ layout: base.njk
 description: たまごすしが制作・公開しているWebアプリの一覧です。
 ---
 
-<h1>アプリ一覧</h1>
-<ul>
+<header class="apps-intro">
+  <h1>アプリ一覧</h1>
+  <p>{{ description }}</p>
+</header>
+
+<ul class="app-grid">
   {%- for app in collections.apps %}
-  <li>
-    <h3><a href="{{ app.url }}">{{ app.data.title or (app.url | replace("/apps/", "") | replace("/", "")) }}</a></h3>
-    {% if app.data.description %}
+  <li class="app-card">
+    <a class="app-card-link" href="{{ app.url }}">
+      <h2>{{ app.data.title or (app.url | replace("/apps/", "") | replace("/", "")) }}</h2>
+      {% if app.data.description %}
       <p>{{ app.data.description }}</p>
-    {% endif %}
+      {% endif %}
+    </a>
   </li>
   {%- endfor %}
 </ul>
