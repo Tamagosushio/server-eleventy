@@ -10,7 +10,11 @@ module.exports = async function (eleventyConfig) {
     const Date = String(value.getDate()).padStart(2, "0");
     return `${Year}-${Month}-${Date}`;
   });
-  const { eleventyImageTransformPlugin } = await import("@11ty/eleventy-img");
+  const {
+    default: eleventyImage,
+    eleventyImageTransformPlugin,
+  } = await import("@11ty/eleventy-img");
+  eleventyImage.concurrency = 1;
   eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
     formats: ["avif", "webp", "auto"],
     widths: ["auto"],
