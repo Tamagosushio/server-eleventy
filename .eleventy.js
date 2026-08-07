@@ -19,7 +19,7 @@ module.exports = async function (eleventyConfig) {
   });
   const { eleventyImageTransformPlugin } = await import("@11ty/eleventy-img");
   eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
-    formats: ["auto"],
+    formats: ["avif", "webp", "auto"],
     widths: ["auto"],
     transformOnRequest: process.env.ELEVENTY_RUN_MODE === "serve",
     htmlOptions: {
