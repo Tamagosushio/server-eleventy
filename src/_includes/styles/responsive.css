@@ -1,0 +1,70 @@
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .main-header {
+        padding: 0.375rem 0.75rem;
+    }
+
+    .main-nav {
+        justify-content: center;
+        gap: 0.25rem;
+    }
+
+    .main-nav .logo {
+        display: inline-flex;
+        min-height: 36px;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .main-nav .logo span {
+        width: 20px;
+        height: 20px;
+        margin-right: 6px;
+    }
+
+    .main-nav .nav-links {
+        flex-wrap: nowrap;
+        width: 100%;
+        justify-content: space-between;
+        gap: 0.15rem;
+        font-size: 1.15rem;
+    }
+
+    .main-nav .nav-links li {
+        display: flex;
+        min-width: 0;
+        flex: 1 1 auto;
+        justify-content: center;
+    }
+
+    .main-nav .nav-links a,
+    .main-nav .nav-links button {
+        min-width: 44px;
+        width: 100%;
+        padding-inline: 0.2rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .main-nav .nav-links {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .main-nav .nav-links li {
+        width: 100%;
+    }
+}

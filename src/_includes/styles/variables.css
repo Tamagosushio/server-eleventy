@@ -1,0 +1,13 @@
+:root {
+    --dohna-bg: #1a1a2e;
+    --dohna-bg-dark: #0f0f1a;
+    --dohna-pink: #ff33a8;
+    --dohna-cyan: #33ffff;
+    --dohna-yellow: #f2f23a;
+    --text-color: #ffffff;
+    --text-muted: #b8b8b8;
+    --font-display: "Teko", sans-serif;
+    --font-body: "Inter", "Noto Sans JP", sans-serif;
+    --border-radius: 8px;
+    --transition-speed: 0.3s;
+}

@@ -1,0 +1,162 @@
+/* TOC Styles */
+.toc {
+    position: relative;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border: 3px solid var(--dohna-cyan);
+    border-radius: var(--border-radius);
+    background-color: var(--dohna-bg-dark);
+    z-index: 1;
+}
+
+.toc::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--dohna-bg-dark);
+    transform: skewX(-5deg);
+    z-index: -1;
+    border-radius: var(--border-radius);
+}
+
+.toc h2 {
+    font-size: 1.8rem;
+    color: var(--dohna-pink);
+    margin-top: 0;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.toc ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.toc li a {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: var(--dohna-cyan);
+    border: 2px solid var(--dohna-cyan);
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    transition: all var(--transition-speed) ease-in-out;
+    font-family: var(--font-body);
+}
+
+.toc li a:hover {
+    color: var(--dohna-bg-dark);
+    background-color: var(--dohna-cyan);
+    box-shadow: 0 0 10px var(--dohna-cyan);
+    transform: translateY(-2px);
+}
+
+/* Table Styles */
+.main-content table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    border: 2px solid var(--dohna-cyan);
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.main-content th,
+.main-content td {
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--dohna-pink);
+    color: var(--text-color);
+    text-align: center;
+    word-break: break-word;
+}
+
+.main-content th {
+    background-color: rgba(255, 51, 168, 0.15);
+    color: var(--dohna-yellow);
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+}
+
+.main-content tr:hover td {
+    background-color: rgba(51, 255, 255, 0.1);
+}
+
+/* Table Details/Summary Styles */
+.main-content table details {
+    text-align: left;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    padding: 0.5rem;
+    border: 1px solid rgba(51, 255, 255, 0.2);
+}
+
+.main-content table summary {
+    cursor: pointer;
+    color: var(--dohna-cyan);
+    font-weight: bold;
+    outline: none;
+    user-select: none;
+    transition: color var(--transition-speed);
+}
+
+.main-content table summary:hover {
+    color: var(--dohna-pink);
+}
+
+.main-content table details[open] summary {
+    margin-bottom: 0.5rem;
+    border-bottom: 1px dashed rgba(51, 255, 255, 0.5);
+    padding-bottom: 0.2rem;
+}
+
+.main-content table .details-content {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.main-content table .details-content p {
+    margin-bottom: 0.4rem;
+    color: var(--text-muted);
+}
+
+.main-content table .details-content p:last-child {
+    margin-bottom: 0;
+}
+
+.code-copy-button {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    padding: 0.4rem;
+    border: 1px solid var(--dohna-cyan);
+    border-radius: 4px;
+    background: var(--dohna-bg-dark);
+    cursor: pointer;
+    opacity: 0.85;
+}
+
+.code-copy-button:hover {
+    opacity: 1;
+}
+
+.code-copy-button [data-feedback] {
+    position: absolute;
+    right: 0;
+    bottom: calc(100% + 0.5rem);
+    width: max-content;
+    padding: 0.3rem 0.5rem;
+    border-radius: 4px;
+    background: var(--dohna-cyan);
+    color: var(--dohna-bg-dark);
+    font: 0.8rem var(--font-body);
+    pointer-events: none;
+}
+

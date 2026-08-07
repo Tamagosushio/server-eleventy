@@ -3,7 +3,7 @@ title: "自作言語を作ってみたい2"
 date: 2025-05-17
 description: "エスペラント語ベースに、様々なプログラミング言語の文法をミックスした言語を作ります。"
 image:
-  url: "/blogs/thumbnails/programlingvo2.png"
+  url: "thumbnail.png"
   alt: "Esperanto+Peggyjs 2"
 tags: ["JavaScript", "自作言語"]
 ---

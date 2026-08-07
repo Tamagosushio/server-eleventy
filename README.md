@@ -36,12 +36,30 @@ npm run build:check
 
 ## 主なディレクトリ
 
-- `src/_includes`: 共通レイアウトとテンプレート
-- `src/blogs`: ブログ記事
+- `src/_data`: サイト情報、ナビゲーションなどの共通データ
+- `src/_includes`: 共通レイアウト、テンプレート、CSS部分ファイル
+- `src/blogs`: ブログ記事（1記事につき1ディレクトリ）
 - `src/portfolio`: ポートフォリオ
 - `src/apps`: ブラウザ上で動くデモ
-- `src/styles`: 共通スタイル
+- `src/styles`: CSSのエントリーポイント
 - `scripts`: ビルド補助・生成物検査
+
+### CSS
+
+`src/styles/main.css.njk` が `src/_includes/styles` の部分ファイルを順番に結合し、単一の `/styles/main.css` を生成します。スタイルを追加するときは、対象の責務に対応する部分ファイルを編集してください。
+
+### ブログ記事
+
+記事は次のように本文と画像を同じディレクトリへまとめます。`image.url` には `thumbnail.png` のような記事ディレクトリからの相対パスを指定できます。
+
+```text
+src/blogs/<slug>/
+├── index.md
+├── thumbnail.png
+└── 本文で使用する画像
+```
+
+全記事に共通するレイアウトなどは `src/blogs/blogs.json`、サイト全体で共有する値は `src/_data` に置きます。
 
 ## 公開時の注意
 

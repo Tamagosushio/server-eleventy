@@ -1,0 +1,81 @@
+.main-content blockquote {
+    border-left: 4px solid var(--dohna-pink);
+    padding-left: 1rem;
+    margin: 1.5rem 0;
+    color: var(--text-muted);
+    font-style: italic;
+    background-color: rgba(255, 51, 168, 0.1);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+}
+
+:not(pre) > code {
+    background-color: rgba(0, 0, 0, 0.25);
+    color: var(--dohna-cyan);
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+    font-family: Consolas;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-display);
+    color: var(--dohna-yellow);
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin: 0 0 1.5rem 0;
+    animation: glitch 0.6s 0.9s both;
+    text-align: center;
+    line-height: 1.2;
+    position: relative;
+    isolation: isolate;
+}
+
+h1::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.3) 0, rgba(0, 0, 0, 0.3) 1px, transparent 1px, transparent 3px);
+    pointer-events: none;
+    z-index: 1;
+}
+
+@media (min-width: 768px) {
+    h1 {
+        font-size: 4rem;
+    }
+}
+
+h2 {
+    font-size: 1.8rem;
+    color: var(--dohna-pink);
+    line-height: 1.3;
+}
+
+@media (min-width: 768px) {
+    h2 {
+        font-size: 2.5rem;
+    }
+}
+
+h3 {
+    font-size: 1.0rem;
+    color: var(--dohna-pink);
+    line-height: 1.0;
+}
+
+@media (min-width: 768px) {
+    h3 {
+        font-size: 1.5rem;
+    }
+}
+

@@ -29,10 +29,12 @@
     <meta name="twitter:title" content="{{ pageTitle }}">
     <meta name="twitter:description" content="{{ pageDescription }}">
     {%- if image.url %}
-      {%- if image.url[0] == '/' and image.url[1] != '/' %}
+      {%- if image.url.startsWith('http') or image.url.startsWith('//') %}
+        {%- set socialImageUrl = image.url %}
+      {%- elif image.url[0] == '/' %}
         {%- set socialImageUrl = metadata.url + image.url %}
       {%- else %}
-        {%- set socialImageUrl = image.url %}
+        {%- set socialImageUrl = metadata.url + page.url + image.url %}
       {%- endif %}
     <meta property="og:image" content="{{ socialImageUrl }}">
     <meta name="twitter:image" content="{{ socialImageUrl }}">

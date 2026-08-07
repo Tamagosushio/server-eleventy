@@ -3,7 +3,7 @@ title: "スレスパの日エス対訳"
 date: 2026-05-26
 description: "SlayTheSpireの日エス対訳を雑に作ってみました。"
 image:
-  url: "/blogs/thumbnails/sts-ja-eo.png"
+  url: "thumbnail.png"
   alt: "Slay The Spire + Esperanto"
 tags: ["エスペラント"]
 ---
@@ -147,5 +147,4 @@ tags: ["エスペラント"]
 | ホログラム | 3ブロックを得る。捨て札からカードを1枚手札に加える。廃棄。 | Gajnu 3 da ŝirmo. Metu karton el via forĵetstako en vian manon. Elĉerpu. |
 | 遺伝的アルゴリズム | 1ブロックを得る。このカードのブロック値が永続的に2増加する。廃棄。 | Gajnu 1 da ŝirmo. Permanente altigu ĉi ties ŝirmon je 2. Elĉerpu. |
 | デフラグ | 集中力1を得る。 | Gajnu 1 da atento. |
-
 

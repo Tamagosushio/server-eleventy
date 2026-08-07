@@ -4,13 +4,6 @@ const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 
 module.exports = async function (eleventyConfig) {
-  eleventyConfig.addGlobalData("metadata", {
-    title: "たまごすしのホームページ",
-    description: "たまごすしが徒然なるままに更新する個人サイト。",
-    url: "https://tamagosushi.jp",
-    author: "たまごすし",
-    locale: "ja_JP",
-  });
   eleventyConfig.addFilter("dateFormat", function (value) {
     const Year = value.getFullYear();
     const Month = String(value.getMonth() + 1).padStart(2, "0");
@@ -48,7 +41,6 @@ module.exports = async function (eleventyConfig) {
   // Set directories to pass through to the _site folder
   [
     "src/assets/",
-    "src/styles/",
     "src/js/",
     "src/favicon.ico",
     "src/apps/programlingvo/parser.js",
@@ -57,7 +49,6 @@ module.exports = async function (eleventyConfig) {
     "src/apps/procon34-visualizer-web",
     "src/**/*.gif",
     "src/blogs/**/thumbnail.png",
-    "src/blogs/thumbnails/",
   ].forEach((path) => eleventyConfig.addPassthroughCopy(path));
   eleventyConfig.addPassthroughCopy({
     "node_modules/prismjs/themes/prism-okaidia.css": "styles/vendor/prism-okaidia.css",
@@ -68,6 +59,7 @@ module.exports = async function (eleventyConfig) {
   [
     "/src/assets/",
     "/src/styles/",
+    "/src/_includes/styles/",
     "/src/js/",
   ].forEach((path) => eleventyConfig.addWatchTarget(path));
   // collections

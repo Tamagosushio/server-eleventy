@@ -1,0 +1,26 @@
+[
+  {
+    "label": "Home",
+    "url": "/"
+  },
+  {
+    "label": "Portfolio",
+    "url": "/portfolio",
+    "activePrefix": "/portfolio"
+  },
+  {
+    "label": "Blogs",
+    "url": "/blogs/",
+    "activePrefix": "/blogs/"
+  },
+  {
+    "label": "Apps",
+    "url": "/apps/",
+    "activePrefix": "/apps/"
+  },
+  {
+    "label": "Tags",
+    "url": "/tags/",
+    "activePrefix": "/tags/"
+  }
+]

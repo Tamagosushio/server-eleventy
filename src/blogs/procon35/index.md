@@ -3,7 +3,7 @@ title: "procon35体験記"
 date: 2024-10-23
 description: "2024年開催の高専プロコンに参加しました。"
 image:
-  url: "/blogs/procon35/thumbnail.png"
+  url: "thumbnail.png"
   alt: "第35回高専プロコン"
 tags: ["OpenSiv3D", "C++", "高専プロコン"]
 ---

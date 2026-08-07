@@ -3,7 +3,7 @@ title: "TUI正規表現エディタ\"Retui\"を作った"
 date: 2026-05-06
 description: "研究で正規表現を弄り回す必要が出てきたので作りました。"
 image:
-  url: "/blogs/thumbnails/retui.png"
+  url: "thumbnail.png"
   alt: "Retui"
 tags: ["C++"]
 ---

@@ -1,0 +1,62 @@
+@keyframes slideInDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes glitch {
+
+    2%,
+    64% {
+        transform: translate(1px, 0) skew(0deg);
+    }
+
+    4%,
+    60% {
+        transform: translate(-1px, 0) skew(0deg);
+    }
+
+    62% {
+        transform: translate(0, 0) skew(2deg);
+    }
+}
+
+* {
+    will-change: auto;
+}
+
+.post-list-item:hover,
+.post-list-item img {
+    will-change: transform;
+}
+

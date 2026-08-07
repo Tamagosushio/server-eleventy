@@ -3,7 +3,7 @@ title: "Pythonでテキストや画像をDiscordに送信"
 date: 2025-04-17
 description: "研究であったら便利そうなので作りました。"
 image:
-  url: "/blogs/thumbnails/python-post-discord.png"
+  url: "thumbnail.png"
   alt: "Python+Discord"
 tags: ["Python", "Discord"]
 ---
