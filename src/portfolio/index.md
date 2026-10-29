@@ -51,12 +51,14 @@ visualizerと通信機能を主に担当しました。
 [https://github.com/Tamagosushio/jigjp-internship-2024](https://github.com/Tamagosushio/jigjp-internship-2024)  
 株式会社jig.jp様のインターンシップに応募した際に作成した選考課題です。  
 DenoとBulmaを使用して、楽にモダンなデザインにしました。  
-[こちらのDenoサーバー](https://tamagosushi-jigjp-intern.deno.dev)からプレイすることができます。
+~~[こちらのDenoサーバー](https://tamagosushi-jigjp-intern.deno.dev)からプレイすることができます。~~  
+**Deno Deploy Classic のサービス終了により、プレイ不可となりました。移行予定はありません。**  
 ![しりとりWebアプリ](./jigjp-intern.png)  
 ### タイピングゲーム
 [https://github.com/jigintern/jigintern-2024-real-d](https://github.com/jigintern/jigintern-2024-real-d)  
 上記のインターンシップで、「さわやか」をお題に作成したWebアプリです。私はバックエンドを担当しました。  
-[こちらのDenoサーバー](https://mugen-hanabi-touch.deno.dev)からプレイすることができます。  
+~~[こちらのDenoサーバー](https://mugen-hanabi-touch.deno.dev)からプレイすることができます。~~  
+**Deno Deploy Classic のサービス終了により、プレイ不可となりました。移行予定はありません。**  
 ![タイピングゲーム](./jigjp-intern-d.png)  
 
 ## <a id="OpenSiv3D"></a>OpenSiv3D
